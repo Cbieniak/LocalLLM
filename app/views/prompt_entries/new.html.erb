@@ -1,0 +1,14 @@
+<h1>New Prompt</h1>
+
+<%= form_with model: @prompt_entry do |form| %>
+  <div>
+    <%= form.label :prompt %><br>
+    <%= form.text_field :prompt %>
+    <% @prompt_entry.errors.full_messages_for(:prompt).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
