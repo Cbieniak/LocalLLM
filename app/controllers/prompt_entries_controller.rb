@@ -4,7 +4,7 @@ class PromptEntriesController < ApplicationController
   end
 
   def show
-    @prompt = PromptEntry.find(params[:id])
+    @prompt_entry = PromptEntry.find(params[:id])
   end
 
   def new

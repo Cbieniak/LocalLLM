@@ -1,3 +1,2 @@
-<h1><%= @prompt.prompt %></h1>
-
-<p><%= @prompt.response %></p>
+<%= turbo_stream_from "prompt_updates" %>
+<%= render @prompt_entry %>
