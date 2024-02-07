@@ -1,6 +1,6 @@
 class PromptEntriesController < ApplicationController
   def index
-    @prompts = PromptEntry.all
+    @prompts = PromptEntry.all.reverse
   end
 
   def show
@@ -15,7 +15,7 @@ class PromptEntriesController < ApplicationController
     @prompt_entry = PromptEntry.new(prompt_entry_params)
 
     if @prompt_entry.save
-      redirect_to @prompt_entry
+      redirect_to new_prompt_entry_path
     else
       render :new, status: :unprocessable_entity
     end
