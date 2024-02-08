@@ -1,15 +1,13 @@
 <%= turbo_stream_from "prompt_entries" %>
-
-
+<h1 class="text-4xl font-extrabold dark:text-white">Local LLM</h1>
 <main class="container">
   <%= turbo_frame_tag "new_prompt_entry_frame" do %>
-    <div class="header">
-      <h1>Prompts</h1>
-      <%= link_to "New prompt_entry",
-                  new_prompt_entry_path %>
-    </div>
+      <button class="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+        <%= link_to "Ask me something",
+                    new_prompt_entry_path %>
+      </button>
   <% end %>
-
+  <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
   <turbo-frame id="prompt_entries">
     <%= render @prompts %>
   </turbo-frame>

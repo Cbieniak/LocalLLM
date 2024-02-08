@@ -1,7 +1,9 @@
 <%= turbo_frame_tag prompt_entry do %>
-  <h1> <%= prompt_entry.prompt %> </h1>
+  <h3 class="font-semibold text-gray-900"> <%= prompt_entry.prompt %> </h3>
   <% if prompt_entry.is_processing %>
-   <div>...</div>
+  <div>...</div>
   <% end %>
-  <%= prompt_entry.response %>
+  <dl class="mt-4 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+  <p class="inline text-gray-900"> <%= prompt_entry.response %> </p>
+  <dl class="mt-8 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
 <% end %>
