@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_04_015731) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_08_093154) do
   create_table "prompt_entries", force: :cascade do |t|
     t.string "prompt"
     t.text "response"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
   end
 
 end

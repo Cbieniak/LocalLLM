@@ -1,4 +1,7 @@
 <%= turbo_frame_tag prompt_entry do %>
   <h1> <%= prompt_entry.prompt %> </h1>
+  <% if prompt_entry.is_processing %>
+   <div>...</div>
+  <% end %>
   <%= prompt_entry.response %>
 <% end %>
