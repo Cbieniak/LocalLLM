@@ -152,9 +152,9 @@ def generate(
            probability and displays it.
     """
 
-    if verbose:
-        print("=" * 10)
-        print("Prompt:", prompt)
+    # if verbose:
+    #     print("=" * 10)
+    #     print("Prompt:", prompt)
 
     prompt = mx.array(tokenizer.encode(prompt))
 
@@ -186,14 +186,14 @@ def generate(
     if verbose:
         print(token_string[skip:], flush=True)
         gen_time = time.perf_counter() - tic
-        print("=" * 10)
-        if token_count == 0:
-            print("No tokens generated for this prompt")
-            return
-        prompt_tps = prompt.size / prompt_time
-        gen_tps = (token_count - 1) / gen_time
-        print(f"Prompt: {prompt_tps:.3f} tokens-per-sec")
-        print(f"Generation: {gen_tps:.3f} tokens-per-sec")
+        # print("=" * 10)
+        # if token_count == 0:
+        #     print("No tokens generated for this prompt")
+        #     return
+        # prompt_tps = prompt.size / prompt_time
+        # gen_tps = (token_count - 1) / gen_time
+        # print(f"Prompt: {prompt_tps:.3f} tokens-per-sec")
+        # print(f"Generation: {gen_tps:.3f} tokens-per-sec")
 
     return token_string
 
